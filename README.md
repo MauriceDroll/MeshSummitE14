@@ -1,2 +1,2 @@
 # Smartpilot
-![Header](pictures/bg.png)
+![Header](pictures/logo.png)
