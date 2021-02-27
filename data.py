@@ -1,3 +1,4 @@
+# Imports
 import os
 import csv
 import random
@@ -85,6 +86,8 @@ class TrafficData:
 # Limits a value in an interval
 def limit(value, min, max):
     """
+    limit(value, min, max) -> limited_value
+
     Limits a value in an interval.
 
         Parameters:
@@ -106,6 +109,8 @@ def limit(value, min, max):
 # Maps a value from one range to another
 def map(value, min_in, max_in, min_out, max_out):
     """
+    map(value, min_in, max_in, min_out, max_out) -> mapped_value
+
     Maps a value from one range to another.
 
         Parameters:
@@ -262,54 +267,72 @@ with open(file) as csv_file:
 
 data_weather = weather_data[76131]
 
-
-def traffic_to_tensor(data_traffic, zeitpunkt):
-    
+# Returns a tensor which represents traffic density in retrospect of specific date
+def traffic_to_tensor(data_traffic, time):
     """
-    traffic_tensor() -> Tensor
+    traffic_to_tensor(data_traffic, time) -> Tensor
 
-    Returns a tensor which represents traffic density in retrospect of specific date
+    Returns a tensor which represents traffic density in retrospect of specific date.
 
+        Parameters:
+            data_traffic: Traffic data to get the traffic tensor for
+            time: Timestamp to get the traffic tensor for
+
+        Returns:
+            A tensor of shape (density)
     """
 
-    if (zeitpunkt in data_traffic.time) == True:
-        i = data_traffic.time.index(zeitpunkt)
-        x = data_traffic.density[i]
-        x = int(x)
+    # Create the traffic density tensor
+    if (time in data_traffic.time) == True:
+        index = data_traffic.time.index(time)
+        density = int(data_traffic.density[index])
 
-        traffic_tensor = torch.tensor([x], dtype=torch.long)
-
+        traffic_tensor = torch.tensor([density], dtype = torch.long)
     else:
-        # Falls Datum nicht gefunden wird
         traffic_tensor = torch.tensor([0])
 
     return traffic_tensor
 
-def random_choice(a):
-    # get random index from list
-    random_idx = random.randint(0, a-1)
-    return random_idx
-
-def weather_to_tensor(data_weather, batch=1, input_size=7):
-    
+# Gets a random index for a list
+def random_choice(size):
     """
-    weather_to_tensor() -> Tensor, date
+    random_choice(size) -> int
+
+    Gets a random index for a list.
+
+        Parameters:
+            size: Size of the list to get the random index for
+
+        Returns:
+            A random index for e list with given size
+    """
+
+    random_index = random.randint(0, size - 1)
+    return random_index
+
+def weather_to_tensor(data_weather, batch = 1, input_size = 7):
+    """
+    weather_to_tensor() -> Tensor, datetime
 
     Returns a random tensor of shape (seq_len, batch, input_size)
 
-    Keywords:
-        data - class whitch provides weather data
-        batch - total number of training examples present in a single batch
-        input_size - the number of expected features in the input x   
+        Parameters:
+            data: Class whitch provides weather data
+            batch: Total number of training examples present in a single batch
+            input_size: The number of expected features in the input x
+
+        Returns:
+            Tensor: A random tensor of shape (seq_len, batch, input_size)
+            datetime: Datetime of the random tensor
     """
 
+    # Create empty tensor
     n_samples = len(data_weather.temperature)
-
     tensor = torch.zeros(1, batch, input_size)
 
+    # Add wheather data for each batch
     for i in range(batch):
         sample_index = random_choice(n_samples)
-        #print(sample_index)
 
         tensor[0][i][0] = data_weather.temperature[sample_index]
         tensor[0][i][1] = data_weather.wind_speed[sample_index]
