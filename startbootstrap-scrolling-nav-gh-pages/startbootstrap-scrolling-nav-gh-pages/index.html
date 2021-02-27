@@ -13,7 +13,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Smart Pilot</title>
+  <title>Smart Pilot- ein Hackathon-Projekt</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -64,33 +64,50 @@
     </div>
   </header>
 
-<div id="calendar2" style="text-align: center;">
+<!--<div id="calendar2" style="text-align: center; background-color: gray;" >
 	  	<div style="text-align: center;">
 		<input style="text-align: center;" id="calendar"> </input>
 		<script>
 			var x = document.getElementById("calendar")
 			x.setAttribute("type", "date");
-			x.setAttribute("value", "2021-02-27");
+			x.setAttribute("value", "2021-02-28");
 			document.body.appendChild(x);
 		</script>
 		</div>
 </div>
+-->
 
-
-  <section id="services" class="bg-light">
+  <section id="services" >
     <div class="container">
+	<div class="row">
+	<div class="col-lg-8 mx-auto">
+	<div id="calendar2" style="text-align: center;" >
+	  	<div>
+		<input style="text-align: center;" id="calendar"> </input>
+		<script>
+			var x = document.getElementById("calendar")
+			x.setAttribute("type", "date");
+			x.setAttribute("value", "2021-02-28");
+			document.body.appendChild(x);
+		</script>
+		</div>
+		</div>
+</div>
+</div>
+<br>
       <div class="row">
         <div class="col-lg-8 mx-auto">
 
-			<img class="card-img-top" id="pictureMaps" src="pictures/1.png" alt="Card image cap">
-			<div class="card-body">
-			<p class="card-text">Kartenansicht Karlsruhe</p>
+			<img class="card-img-top" id="pictureMaps" src="pictures/0.png" alt="Card image cap">
+			<div  class="card-body">
+			<p id="labelText" class="card-text" style="font-size: 2rem;">Kartenansicht Karlsruhe</p>
 			
 
+  
   </div>
 	<div>
 		<label for="rangeMaps" class="form-label"> </label>
-	<input type="range" class="form-range" value="0" min="0" max="24" step="1" id="rangeMaps"> </input>
+	<input type="range" class="form-range" value="0" min="0" max="23" step="1" id="rangeMaps"> </input>
 
 	<label id="labelUhrzeit">0:00Uhr</label>
 
@@ -103,7 +120,7 @@
 	var output = document.getElementById("pictureMaps");
 	output.innerHTML = slider.value; // Display the default slider value
 
-	var pictures = ["pictures/1.png", "pictures/2.png", "pictures/3.png","pictures/4.png", "pictures/5.png","pictures/6.png","pictures/7.png","pictures/8.png","pictures/9.png","pictures/10.png", "pictures/11.png","pictures/12.png","pictures/13.png","pictures/14.png","pictures/15.png","pictures/16.png","pictures/17.png","pictures/18.png","pictures/19.png","pictures/20.png","pictures/21.png","pictures/22.png","pictures/23.png","pictures/24.png"];
+	var pictures = ["pictures/0.png","pictures/1.png", "pictures/2.png", "pictures/3.png","pictures/4.png", "pictures/5.png","pictures/6.png","pictures/7.png","pictures/8.png","pictures/9.png","pictures/10.png", "pictures/11.png","pictures/12.png","pictures/13.png","pictures/14.png","pictures/15.png","pictures/16.png","pictures/17.png","pictures/18.png","pictures/19.png","pictures/20.png","pictures/21.png","pictures/22.png","pictures/23.png","pictures/24.png"];
 	
 
 	// Update the current slider value (each time you drag the slider handle)
@@ -140,12 +157,12 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>Kontaktdaten: </h2>
+          <h2>Kontaktdaten</h2>
 		  <br>
-		  <h4>Erik Helmut E-Mail: erik.helmut1@gmail.com</h4>
-		  <h4>Maurice Droll E-Mail: mauricedroll@gmail.com</h4>
-		  <h4>Oliver Gerstl E-Mail: oliver.gerstl@web.de </h4>
-		  <h4>Alicia Hasselbach E-Mail: aliciahasselbach@web.de </h4>
+		  <p>Erik Helmut erik.helmut1@gmail.com</p>
+		  <p>Maurice Droll mauricedroll@gmail.com</p>
+		  <p>Oliver Gerstl oliver.gerstl@web.de </p>
+		  <p>Alicia Hasselbach aliciahasselbach@web.de </p>
           <p class="lead"></p>
         </div>
       </div>
@@ -155,7 +172,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Smart Pilot</p>
+      <p class="m-0 text-center text-white">Copyright &copy; SmartPilot</p>
     </div>
     <!-- /.container -->
   </footer>
