@@ -7,18 +7,14 @@
 
 ## Kontakte
 
-Alicia Hasselbach
-
+Alicia Hasselbach <br>
 [aliciahasselbach@web.de](mailto:aliciahasselbach@web.de)
 
-Erik Helmut
-
+Erik Helmut <br>
 [erik.helmut1@gmail.com](mailto:erik.helmut1@gmail.com)
 
-Maurice Droll
-
+Maurice Droll <br>
 [mauricedroll@gmail.com](mailto:mauricedroll@gmail.com)
 
-Oliver Gerstl
-
+Oliver Gerstl <br>
 [oliver.gerstl@web.de](mailto:oliver.gerstl@web.de)
