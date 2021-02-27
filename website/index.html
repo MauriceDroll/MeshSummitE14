@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+.slidecontainer {
+	width: 200%;
+}
+</style>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Smart Pilot- ein Hackathon-Projekt</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="javascript/script.js" ></script>
+
+	<!-- Custom styles for this template -->
+	<link href="css/scrolling-nav.css" rel="stylesheet">
+	<link href="css/style.css" type="text/css" rel="stylesheet">	
+</head>
+
+<body id="page-top">
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+		<div class="container">
+			<a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#services">Service</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<header style="padding: 0 0 0; background-color: white;" class="bg-white text-white" id="myHeader">
+		<img src="pictures/logo.png" class="img-fluid" alt="Responsive image">
+	</header>
+	
+	<br>
+	<div class="row" style="height: auto;" class="p-3 mb-2 bg-light">
+		<div id="calendar2" style="text-align: center;"  >
+			<div>
+				<input style="text-align: center;" id="calendar"> </input>
+				<script>
+					var x = document.getElementById("calendar")
+					x.setAttribute("type", "date");
+					x.setAttribute("value", "2021-02-28");
+					document.body.appendChild(x);
+				</script>
+			</div>
+		</div>
+	</div>
+	<div class="card-body">
+		<p id="labelText" class="card-text" style="font-size: 2rem;">Kartenansicht Karlsruhe</p>
+	</div>
+
+
+	<section id="services" style= "padding: 20px;" class="p-3 mb-2 bg-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mx-auto">
+					<img class="card-img-top" id="pictureMaps" src="pictures/0.png" alt="Card image cap">
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-8 mx-auto">
+					<div>
+						<label for="rangeMaps" class="form-label"> </label>
+						<input type="range" class="form-range" value="0" min="0" max="23" step="1" id="rangeMaps"> </input>
+						<label id="labelUhrzeit">0:00Uhr</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	  
+	<script>	  
+		var slider = document.getElementById("rangeMaps");
+		var output = document.getElementById("pictureMaps");
+		output.innerHTML = slider.value; // Display the default slider value
+
+		var pictures = ["pictures/0.png","pictures/1.png", "pictures/2.png", "pictures/3.png","pictures/4.png", "pictures/5.png","pictures/6.png","pictures/7.png","pictures/8.png","pictures/9.png","pictures/10.png", "pictures/11.png","pictures/12.png","pictures/13.png","pictures/14.png","pictures/15.png","pictures/16.png","pictures/17.png","pictures/18.png","pictures/19.png","pictures/20.png","pictures/21.png","pictures/22.png","pictures/23.png","pictures/24.png"];
+		
+
+		// Update the current slider value (each time you drag the slider handle)
+		slider.oninput = function() {
+			output.innerHTML = this.value;
+			var anzahlSlider= this.value; 
+			var picture= document.getElementById("pictureMaps")
+			picture.setAttribute("src", pictures[anzahlSlider].toString())
+			document.getElementById("labelUhrzeit").innerHTML = slider.value+":00 Uhr";
+			
+			console.log("Silder has changed")
+		}
+	</script>
+
+	<style type="text/css">
+		#rangeMaps {
+			width: 750px;
+		}
+		#Ueberschrift {
+			text-align:center;
+		}
+		#calendar_div {
+			text-align:center;
+		}
+		#myheader{
+			background-size:cover; 
+			padding: 0 0 0;
+		}
+	</style>
+
+	<section id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mx-auto">
+					<h2>Kontaktdaten</h2>
+					<br>
+					<p>Erik Helmut erik.helmut1@gmail.com</p>
+					<p>Maurice Droll mauricedroll@gmail.com</p>
+					<p>Oliver Gerstl oliver.gerstl@web.de </p>
+					<p>Alicia Hasselbach aliciahasselbach@web.de </p>
+					<p class="lead"></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="py-5 bg-dark">
+		<div class="container">
+			<p class="m-0 text-center text-white">Copyright &copy; SmartPilot</p>
+		</div>
+	</footer>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom JavaScript for this theme -->
+	<script src="js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
