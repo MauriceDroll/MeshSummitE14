@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+.slidecontainer {
+  width: 200%;
+}
+</style>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Smart Pilot</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="javascript/script.js" ></script>
+
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Smart Pilot</h1>
+      <p class="lead">Eine smarte Lösung zum Planen von Lieferverkehr</p>
+    </div>
+  </header>
+
+  <section id="karte">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+<div>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 600px;
+		width: 600px;
+        /* The height is 600 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+      }
+    </style>
+    <script>
+let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: new google.maps.LatLng(-33.91722, 151.23064),
+    zoom: 16,
+	mapTypeId: "satellite",
+  });
+  const iconBase =
+    "https://developers.google.com/maps/documentation/javascript/examples/full/images/";
+  const icons = {
+    parking: {
+      icon: iconBase + "parking_lot_maps.png",
+    },
+    library: {
+      icon: iconBase + "library_maps.png",
+    },
+    info: {
+      icon: iconBase + "info-i_maps.png",
+    },
+  };
+  const features = [
+    {
+      position: new google.maps.LatLng(33.91721, 151.2263),
+      type: "info",
+    },
+    {
+      position: new google.maps.LatLng(3.91539, 151.2282),
+      type: "TEST",
+    },
+  ];
+
+  // Create markers.
+  for (let i = 0; i < features.length; i++) {
+    const marker = new google.maps.Marker({
+      position: features[i].position,
+      icon: icons[features[i].type].icon,
+      map: map,
+    });
+  }
+}
+
+    </script>
+  </head>
+  <body>
+    <h3>Übersicht über Karlsruhe</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2R9CguGe6WuRL8t_h7cofcH3ATpcNwBg&callback=initMap&libraries=&v=weekly"
+      async
+	  
+    ></script>
+  </body>
+    </div>
+	
+  </section>
+
+  <section id="services" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+			<img class="card-img-top" id="pictureMaps" src="pictures/1.jpg" alt="Card image cap">
+			<div class="card-body">
+			<p class="card-text">Kartenansicht Karlsruhe</p>
+  </div>
+		<label for="rangeMaps" class="form-label"></label>
+<input type="range" class="form-range" value="0" min="0" max="24" step="1" id="rangeMaps">
+      </div>
+<script>	  
+	var slider = document.getElementById("rangeMaps");
+	var output = document.getElementById("pictureMaps");
+	output.innerHTML = slider.value; // Display the default slider value
+
+	var pictures = ["pictures/1.jpg", "pictures/2.jpg", "pictures/3.jpg","pictures/4.jpg", "pictures/5.jpg"];
+	
+
+	// Update the current slider value (each time you drag the slider handle)
+	slider.oninput = function() {
+		output.innerHTML = this.value;
+		var anzahlSlider= this.value; 
+		var picture= document.getElementById("pictureMaps")
+		//console.log(picture[2].toString())
+		picture.setAttribute("src", pictures[anzahlSlider].toString())
+		
+		
+		console.log("Silder has changed")
+	}
+</script>
+<style type="text/css">
+	#rangeMaps {
+		width: 750px;
+	}
+</style>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Contact us</h2>
+          <p class="lead"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Smart Pilot</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
