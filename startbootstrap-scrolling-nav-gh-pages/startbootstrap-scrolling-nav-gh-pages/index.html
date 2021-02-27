@@ -47,7 +47,7 @@
     </div>
   </nav>
 
-  <header style="padding: 0 0 0; background-color: white;" class="bg-primary text-white" id="myHeader">
+  <header style="padding: 0 0 0; background-color: white;" class="bg-white text-white" id="myHeader">
 	<img src="pictures/logo.png" class="img-fluid" alt="Responsive image">
     <div class="container text-center">
 <!--	<style> 
@@ -76,12 +76,12 @@
 		</div>
 </div>
 -->
+<!--<section> -->
+<br>
+		<div class="row" style="height: auto;" class="p-3 mb-2 bg-light">
+	<!-- <div class="col-lg-8 mx-auto"> -->
 
-  <section id="services" >
-    <div class="container">
-	<div class="row">
-	<div class="col-lg-8 mx-auto">
-	<div id="calendar2" style="text-align: center;" >
+	<div id="calendar2" style="text-align: center;"  >
 	  	<div>
 		<input style="text-align: center;" id="calendar"> </input>
 		<script>
@@ -92,28 +92,43 @@
 		</script>
 		</div>
 		</div>
-</div>
-</div>
-<br>
+
+		</div>
+	<div  class="card-body">
+		<p id="labelText" class="card-text" style="font-size: 2rem;">Kartenansicht Karlsruhe</p>
+	</div>		
+
+	<!-- </div> -->
+<!-- </section> -->
+
+  <section id="services" style= "padding: 20px;" class="p-3 mb-2 bg-light">
+    <div class="container">
+
+	
       <div class="row">
         <div class="col-lg-8 mx-auto">
 
 			<img class="card-img-top" id="pictureMaps" src="pictures/0.png" alt="Card image cap">
-			<div  class="card-body">
-			<p id="labelText" class="card-text" style="font-size: 2rem;">Kartenansicht Karlsruhe</p>
-			
 
+		</div>
+		</div>
   
-  </div>
-	<div>
-		<label for="rangeMaps" class="form-label"> </label>
-	<input type="range" class="form-range" value="0" min="0" max="23" step="1" id="rangeMaps"> </input>
 
-	<label id="labelUhrzeit">0:00Uhr</label>
+	
+		<div class="row">
+			<div class="col-lg-8 mx-auto">
+  
+				<div>
+					<label for="rangeMaps" class="form-label"> </label>
+					<input type="range" class="form-range" value="0" min="0" max="23" step="1" id="rangeMaps"> </input>
+					<label id="labelUhrzeit">0:00Uhr</label>
+				</div>
+			</div>
+		</div>
+		</div>
+		
 
-      </div>
-
-	  
+	</section>
 	  
 <script>	  
 	var slider = document.getElementById("rangeMaps");
