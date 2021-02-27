@@ -9,7 +9,7 @@ Eine mittels historischen Wetter- und Verkehrsdaten trainierte Künstliche Intel
 
 ## Anwendung
 - [`model.py`](model.py): Architektur des [LSTM](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)-Netzes
-- [`data.py`](data.py): Datenimport und -aufbereitung für Neuronales Netz 
+- [`data.py`](data.py): Datenimport und -aufbereitung für das Neuronales Netz 
 - [`train.py`](train.py): Start des Trainig Loops und Speichern der [Parameter](model.pth)
 - [`predict.py`](predict.py): Bestimmung der Accuracy des Neuronalen Netzes
 - [`smartpilot.py`](smartpilot.py): Vorhersage des Verkehrsaufkommen aufgrundlage von Datum- und Wettervorgabe
