@@ -1,11 +1,13 @@
-# SmartPilot
+# SmartPilot - MESH Hackathon
 ![Header](pictures/logo.png)
 
 ## Kurzfassung
 
-## How to run the code
+## Weitere Links
 
-## Kontakte
+[Challenge](doc/Enviromental-Challenge.pdf) / [Prototyp](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO) / [Neuronales Netz](notebooks/main.ipynb) / [Präsentation](doc/MESH2.pptx) 
+
+## Kontakte der Smart Pilots
 
 Alicia Hasselbach <br>
 [aliciahasselbach@web.de](mailto:aliciahasselbach@web.de)
