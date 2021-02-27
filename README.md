@@ -17,7 +17,7 @@ Eine mittels historischen Wetter- und Verkehrsdaten trainierte Künstliche Intel
 
 ## Weitere Links
 
-[Challenge](doc/Environmental-Challenge.pdf) / [Prototyp]() / [Neuronales Netz](notebooks/main.ipynb) / [Präsentation](doc/MESH2.pptx) / [smartpilot.ai](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO)
+[Challenge](doc/Environmental-Challenge.pdf) / [Prototyp](website/index.html) / [Neuronales Netz](notebooks/main.ipynb) / [Präsentation](doc/MESH2.pptx) / [smartpilot.ai](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO)
 
 ## Kontakte der Smart Pilots
 
