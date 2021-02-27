@@ -36,13 +36,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link js-scroll-trigger" href="#services">Service</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
           </li>
         </ul>
       </div>
@@ -51,104 +48,53 @@
 
   <header class="bg-primary text-white">
     <div class="container text-center">
-      <h1>Smart Pilot</h1>
-      <p class="lead">Eine smarte Lösung zum Planen von Lieferverkehr</p>
+      <!--<h1>Smart Pilot</h1>
+      <p class="lead">Predictive Traffic to find your ideal way</p>
+	  -->
+	  <img src="pictures/logo.png" class="img-fluid" alt="Responsive image" width="120%" height="150%" alt=""> 
     </div>
   </header>
 
-  <section id="karte">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-<div>
-    <style type="text/css">
-      /* Set the size of the div element that contains the map */
-      #map {
-        height: 600px;
-		width: 600px;
-        /* The height is 600 pixels */
-        width: 100%;
-        /* The width is the width of the web page */
-      }
-    </style>
-    <script>
-let map;
+<div style="text-align:center">
+	  	<div style="text-align:center">
+		<input id="calendar"> </input>
+		<script>
+			var x = document.getElementById("calendar")
+			x.setAttribute("type", "date");
+			x.setAttribute("value", "2021-02-27");
+			document.body.appendChild(x);
+		</script>
+		</div>
+</div>
 
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: new google.maps.LatLng(-33.91722, 151.23064),
-    zoom: 16,
-	mapTypeId: "satellite",
-  });
-  const iconBase =
-    "https://developers.google.com/maps/documentation/javascript/examples/full/images/";
-  const icons = {
-    parking: {
-      icon: iconBase + "parking_lot_maps.png",
-    },
-    library: {
-      icon: iconBase + "library_maps.png",
-    },
-    info: {
-      icon: iconBase + "info-i_maps.png",
-    },
-  };
-  const features = [
-    {
-      position: new google.maps.LatLng(33.91721, 151.2263),
-      type: "info",
-    },
-    {
-      position: new google.maps.LatLng(3.91539, 151.2282),
-      type: "TEST",
-    },
-  ];
-
-  // Create markers.
-  for (let i = 0; i < features.length; i++) {
-    const marker = new google.maps.Marker({
-      position: features[i].position,
-      icon: icons[features[i].type].icon,
-      map: map,
-    });
-  }
-}
-
-    </script>
-  </head>
-  <body>
-    <h3>Übersicht über Karlsruhe</h3>
-    <!--The div element for the map -->
-    <div id="map"></div>
-
-    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2R9CguGe6WuRL8t_h7cofcH3ATpcNwBg&callback=initMap&libraries=&v=weekly"
-      async
-	  
-    ></script>
-  </body>
-    </div>
-	
-  </section>
 
   <section id="services" class="bg-light">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
+
 			<img class="card-img-top" id="pictureMaps" src="pictures/1.jpg" alt="Card image cap">
 			<div class="card-body">
 			<p class="card-text">Kartenansicht Karlsruhe</p>
+			
+
   </div>
-		<label for="rangeMaps" class="form-label"></label>
-<input type="range" class="form-range" value="0" min="0" max="24" step="1" id="rangeMaps">
+	<div>
+		<label for="rangeMaps" class="form-label"> </label>
+	<input type="range" class="form-range" value="0" min="0" max="24" step="1" id="rangeMaps"> </input>
+
+	<label id="labelUhrzeit">0:00Uhr</label>
+
       </div>
+
+	  
+	  
 <script>	  
 	var slider = document.getElementById("rangeMaps");
 	var output = document.getElementById("pictureMaps");
 	output.innerHTML = slider.value; // Display the default slider value
 
-	var pictures = ["pictures/1.jpg", "pictures/2.jpg", "pictures/3.jpg","pictures/4.jpg", "pictures/5.jpg"];
+	var pictures = ["pictures/1.png", "pictures/2.png", "pictures/3.png","pictures/4.png", "pictures/5.png","pictures/6.png","pictures/7.png","pictures/8.png","pictures/9.png","pictures/10.png", "pictures/11.png","pictures/12.png","pictures/13.png","pictures/14.png","pictures/15.png","pictures/16.png","pictures/17.png","pictures/18.png","pictures/19.png","pictures/20.png","pictures/21.png","pictures/22.png","pictures/23.png","pictures/24.png"];
 	
 
 	// Update the current slider value (each time you drag the slider handle)
@@ -156,16 +102,22 @@ function initMap() {
 		output.innerHTML = this.value;
 		var anzahlSlider= this.value; 
 		var picture= document.getElementById("pictureMaps")
-		//console.log(picture[2].toString())
 		picture.setAttribute("src", pictures[anzahlSlider].toString())
-		
+		document.getElementById("labelUhrzeit").innerHTML = slider.value+":00 Uhr";
 		
 		console.log("Silder has changed")
 	}
 </script>
+
 <style type="text/css">
 	#rangeMaps {
 		width: 750px;
+	}
+	#Ueberschrift {
+		text-align:center;
+	}
+	#calendar_div {
+		text-align:center;
 	}
 </style>
     </div>
@@ -176,6 +128,10 @@ function initMap() {
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>Contact us</h2>
+		  <h4>Erik Helmut E-Mail: erik.helmut1@gmail.com</h4>
+		  <h4>Maurice Droll E-Mail: mauricedroll@gmail.com</h4>
+		  <h4>Oliver Gerstl E-Mail: oliver.gerstl@web.de </h4>
+		  <h4>Alicia Hasselbach E-Mail: aliciahasselbach@web.de </h4>
           <p class="lead"></p>
         </div>
       </div>
