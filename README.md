@@ -3,15 +3,15 @@
 
 ## Kurzfassung
 
-SmartPilot ist ein StartUp, das seines Kunden Planungssicherheit verschafft!
+SmartPilot ist ein StartUp, das seinen Kunden Planungssicherheit verschafft!
 
-Ein mittels historischen Wetter- und Verkehrsdaten trainiertes Neuronales Netz ermöglicht es, Verkehrsaufkommen zukünftig mit einer höhreren Genauigkeit vorherzusagen. Damit grenzt sich das Produkt SmartPilot von anderen Anbietern ab, die ausschließlich Routenplanung auf Grundlage von Echtzeitdaten durchführen.
+Eine mittels historischen Wetter- und Verkehrsdaten trainierte Künstliche Intelligenz ermöglicht es, Verkehrsaufkommen zukünftig mit einer höhreren Genauigkeit vorherzusagen. Damit grenzt sich das SmartPilot von anderen Anbietern ab, die ausschließlich Routenplanung auf Grundlage von Echtzeitdaten durchführen.
 
 ## Anwendung
 - [`model.py`](model.py): Architektur des [LSTM](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)-Netzes
 - [`data.py`](data.py): Datenimport und -aufbereitung für Neuronales Netz 
 - [`train.py`](train.py): Start des Trainig Loops und Speichern der [Parameter](model.pth)
-- [`predict.py`](predict.py): Bestimmung der Accuracy
+- [`predict.py`](predict.py): Bestimmung der Accuracy des Neuronalen Netzes
 - [`smartpilot.py`](smartpilot.py): Vorhersage des Verkehrsaufkommen aufgrundlage von Datum- und Wettervorgabe
 - [`webserver.py`](webserver.py): Webserver zur Abfrage von [smartpilot](smartpilot.py)
 
