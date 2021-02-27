@@ -5,7 +5,7 @@
 
 ## Weitere Links
 
-[Challenge](doc/Enviromental-Challenge.pdf) / [Prototyp](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO) / [Neuronales Netz](notebooks/main.ipynb) / [Präsentation](doc/MESH2.pptx) 
+[Challenge](doc/Environmental-Challenge.pdf) / [Prototyp](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO) / [Neuronales Netz](notebooks/main.ipynb) / [Präsentation](doc/MESH2.pptx) 
 
 ## Kontakte der Smart Pilots
 
