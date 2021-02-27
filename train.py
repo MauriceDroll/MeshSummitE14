@@ -1,4 +1,4 @@
-#import time
+# imports
 import math
 import random
 
@@ -11,10 +11,10 @@ import matplotlib.pyplot as plt
 from model import *
 from data import *
 
+# Trains the network with the specified data
 def train(weather_tensor, traffic_tensor):
     output = model(weather_tensor)
     loss = criterion(output, traffic_tensor)
-    # traffic_tensor -> 
     
     optimizer.zero_grad()
     loss.backward()
@@ -24,15 +24,16 @@ def train(weather_tensor, traffic_tensor):
 
 def traffic_from_output(output):
     traffic_idx = torch.argmax(output).item()
+
     return traffic_idx
 
 
 learning_rate = 0.0001
 
-# initialize neural network   
+# Initialize neural network   
 model = RNN(input_size, hidden_size, n_layers, n_traffic).to(device)
 
-# loss and optimizer
+# Loss and optimizer
 criterion = nn.NLLLoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
@@ -52,35 +53,37 @@ n_iters = 500000
 
 #start = time.time()
 
+# Iterate over weather and traffic data
 for i in range(1, n_iters + 1):
-    #character, file, character_tensor, file_tensor = random_training_example(character_files, all_characters)
+    # Character, file, character_tensor, file_tensor = random_training_example(character_files, all_characters)
     weather_tensor, zeitpunkt = weather_to_tensor(data_weather, 1, 7)
     traffic_tensor = traffic_to_tensor(data_traffic, zeitpunkt) 
     output, loss = train(weather_tensor.to(device), traffic_tensor.to(device))
     current_loss += loss
     
-    # print iter number, loss, name and guess
+    # Print iter number, loss, name and guess
     if i % print_every == 0:
         guess = traffic_from_output(output)
         correct = '✓' if guess == traffic_tensor.item() else '✗ (%s)' % traffic_tensor.item()
         #print('%d %d%% (%s) %.4f %s / %s %s' % (i, i / n_iters * 100, timeSince(start), loss, file, guess, correct))
         print('%d %d%% %.4f %s / %s %s' % (i, i / n_iters * 100, loss, file, guess, correct))
 
-    # add current loss avg to list of losses
+    # Add current loss avg to list of losses
     if i % plot_every == 0:
         all_losses.append(current_loss / plot_every)
         current_loss = 0
 
-# create figure
+# Create figure
 mpl.style.use("seaborn-whitegrid")
 plt.figure(figsize=(12,6))
-# create plot
+# Create plot
 plt.plot(all_losses)
-# title and labels
+# Add title and labels
 plt.title("LOSS-function", fontsize=20)
 plt.xlabel("iterations", fontsize=15)
 plt.ylabel("loss", fontsize=15)
-# show plot
+
+# Show plot
 plt.show()
 
 
