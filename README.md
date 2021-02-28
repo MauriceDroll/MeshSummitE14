@@ -5,7 +5,7 @@
 
 SmartPilot ist ein StartUp, das seinen Kunden Planungssicherheit verschafft!
 
-Eine mittels historischen Wetter- und Verkehrsdaten trainierte Künstliche Intelligenz ermöglicht es, Verkehrsaufkommen zukünftig mit einer höhreren Genauigkeit vorherzusagen. Damit grenzt sich das SmartPilot von anderen Anbietern ab, die ausschließlich Routenplanung auf Grundlage von Echtzeitdaten durchführen.
+Eine mittels historischen Wetter- und Verkehrsdaten trainierte Künstliche Intelligenz ermöglicht es, Verkehrsaufkommen zukünftig mit einer höheren Genauigkeit vorherzusagen. Damit grenzt sich das SmartPilot von anderen Anbietern ab, die ausschließlich Routenplanung auf Grundlage von Echtzeitdaten durchführen.
 
 ## Anwendung
 - [`model.py`](model.py): Architektur des [LSTM](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)-Netzes
